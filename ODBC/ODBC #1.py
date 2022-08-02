@@ -36,5 +36,5 @@ def get_ans(database, user, password, host, port):
             conn.close() # close the connection
 
 def ans():
-    return(get_ans('lisdb', 'postgres', 'Gfivez17!', 'localhost', '5432'))
+    return(get_ans('lisdb', 'postgres', 'password', 'localhost', '5432'))
 
