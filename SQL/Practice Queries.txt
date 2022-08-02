@@ -43,10 +43,3 @@ where b.ISBN_no = c.ISBN_no
 and i.accession_no = c.accession_no
 and i.member_no = m.member_no
 and m.member_type = 'PG'
-
-week3 #4
-
-
-
-
-
