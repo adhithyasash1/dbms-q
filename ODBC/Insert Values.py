@@ -19,4 +19,4 @@ def insertRecord(num, name, dept):
 		if conn is not None:
 			conn.close() # close the connection
 
-insertRecord(110, ‘Bhaskar’, ’HR’) #function call
+insertRecord(110, ‘Sashi’, ’HR’) #function call
