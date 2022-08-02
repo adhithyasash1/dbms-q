@@ -1,0 +1,31 @@
+# Write an SQL statement to find the name of the manager of the team: “All Stars”
+
+select m.name
+from managers m, teams t
+where m.team_id = t.team_id and t.name = ’All Stars’
+
+
+# Write an SQL statement to find the names of all teams
+
+select name from teams
+
+
+# Write an SQL statement to find the titles of books authored by an author having firstname as ”Joh Paul” and last name as ”Mueller”
+
+select c.title
+from book_catalogue c, book_authors a
+where c.isbn_no = a.isbn_no
+and author_fname = ’Joh Paul’ and author_lname = ’Mueller’
+
+
+# Write an SQL statement to find the titles of books published by ”McGraw Hill Education”
+
+select title
+from book_catalogue
+where publisher = ’McGraw Hill Education’
+
+
+# Write an SQL statement to display the first name and the last name of students (student fname, student lname) pursuing ‘PG’ courses
+
+select student_fname, student_lname from students s, members m
+where s.roll_no = m.roll_no and member_type = ’PG’
