@@ -20,10 +20,6 @@ def prime(x):
                 break
     return flag
                 
-            
-            
-        
-
 def selectAll():
     conn=None
     try:
