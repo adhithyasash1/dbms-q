@@ -81,7 +81,7 @@ def get_referee():
     try:
         # connect to the PostgreSQL database
         conn = psycopg2.connect(database = 'flisdb', user = 'postgres',
-                password = 'Gfivez17!', host = 'localhost', port = '5432')
+                password = 'password', host = 'localhost', port = '5432')
         cur = conn.cursor() # create a new cursor
         # execute the SELECT statement
         cur.execute('select k.name from matches as m, match_referees as r, referees as k where m.match_num = r.match_num and k.referee_id = r.referee and m.match_date = %s', (date,))
