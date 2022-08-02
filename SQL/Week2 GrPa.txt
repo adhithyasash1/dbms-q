@@ -1,0 +1,48 @@
+#week 3 graded 1
+
+select p.team_id
+from players as p
+where dob <= '01-01-2003'
+
+#week2 graded 2
+
+select t.city, t.playground
+from teams as t
+where t.jersey_away_color = 'Pink'
+
+#week2 graded 3
+
+select p.name, p.jersey_no
+from players as p, teams as t
+where p.team_id = t.team_id and t.name = 'Rainbow'
+
+#week2 graded 4
+
+select s.student_fname, s.roll_no
+from students as s, departments as d
+where s.department_code = d.department_code and d.department_code = 'CS' 
+and s.dob > '2002-06-15'
+
+#week2 graded 5
+
+select f.faculty_lname
+from faculty as f, departments as d
+where f.department_code = d.department_code and d.department_name = 'Electrical Engineering'
+and f.gender = 'M'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

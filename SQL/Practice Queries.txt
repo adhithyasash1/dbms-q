@@ -1,0 +1,52 @@
+PRACTICE SQL QUERIES
+
+week3 #1
+
+with yolo(team_id, count) as
+	(select t.team_id, count(t.team_id)
+	from matches as m, teams as t
+	where t.team_id = m.host_team_id or t.team_id = m.guest_team_id
+	group by t.team_id)
+	select t.name
+	from yolo as y, teams as t
+	where y.count > 3
+	and y.team_id = t.team_id
+
+week3 #2
+
+with yolo(fname, lname, member_no) as
+(select distinct f.faculty_fname, f.faculty_lname, m.member_no
+from faculty as f, members as m
+where f.id = m.id)
+
+select y.fname, y.lname
+from yolo as y, book_issue as b
+where y.member_no = b.member_no
+
+week3 #3
+
+with yolo(ISBN_no) as
+(select c.ISBN_no
+from book_issue as b, book_copies as c
+where b.accession_no = c.accession_no
+and b.doi = '11-8-2021')
+
+select count(d.title)
+from yolo as y, book_catalogue as d
+where y.ISBN_no = d.ISBN_no
+
+week3 #5
+
+select distinct b.title
+from book_catalogue as b, book_copies as c, book_issue as i, members as m
+where b.ISBN_no = c.ISBN_no
+and i.accession_no = c.accession_no
+and i.member_no = m.member_no
+and m.member_type = 'PG'
+
+week3 #4
+
+
+
+
+

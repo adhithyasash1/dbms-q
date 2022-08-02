@@ -1,0 +1,58 @@
+week3 graded1
+
+select m.match_num, r.name
+from match_referees as m, matches as s, referees as r
+where s.match_date = '2020-05-20'
+and m.match_num = s.match_num
+and m.referee = r.referee_id
+
+week3 graded2
+
+with yolo(name, dob) as
+(select p.name, p.dob
+from teams as t, players as p
+where t.team_id = p.team_id
+and t.name = 'Rainbow')
+select name
+from yolo
+where dob = (select min(dob) from yolo)
+
+week3 graded 3
+
+with lol(team_id) as 
+(select t.team_id
+from teams as t, players as p
+where t.team_id = p.team_id
+except 
+select t.team_id
+from teams as t, players as p
+where t.team_id = p.team_id
+and p.jersey_no = '77')
+
+select team_id
+from lol
+except 
+select t.team_id
+from teams as t, players as p
+where t.team_id = p.team_id
+and p.jersey_no = '88'
+
+week3 graded 4
+
+select s.student_fname, s.student_lname
+from students as s, members as m, book_issue as b
+where s.roll_no = m.roll_no
+and m.member_no = b.member_no
+and b.accession_no is not null
+
+week3 graded 5
+
+with yolo(title) as
+(select a.title
+from book_catalogue as a, book_copies as b
+where a.title like '%Management%'
+and a.ISBN_no = b.ISBN_no)
+
+select title, count(title)
+from yolo
+group by title
