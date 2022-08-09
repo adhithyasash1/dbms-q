@@ -2,4 +2,4 @@
 
 Course Code : BSCCS2001
 
-SQL Queries and ODBC Codes
+Coursework containing SQL Queries and ODBC Codes
